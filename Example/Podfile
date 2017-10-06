@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AHFMBottomPlayerManager_Example' do
+  pod 'AHFMBottomPlayerManager', :path => '../'
+
+  target 'AHFMBottomPlayerManager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
