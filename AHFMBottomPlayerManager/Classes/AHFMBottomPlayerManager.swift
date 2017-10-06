@@ -32,11 +32,13 @@ public struct AHFMBottomPlayerManager: AHFMModuleManager {
         AHServiceRouter.registerTask(AHFMBottomPlayerServices.service, taskName: AHFMBottomPlayerServices.taskDisplayPlayer) { (userInfo, completion) -> [String : Any]? in
             
             guard let parentVC = userInfo[AHFMBottomPlayerServices.keyParentVC] as? UIViewController else {
+                assert(false, "You have to include a VC as a parentVC.")
                 completion?(false, nil)
                 return nil
             }
             
             guard let shouldShowPlayer = userInfo[AHFMBottomPlayerServices.keyShowPlayer] as? Bool else{
+                assert(false, "You have to include 'shouldShowPlayer' to indicate if you need the bottomPlayer to show up or not.")
                 completion?(false, nil)
                 return nil
             }
@@ -44,6 +46,7 @@ public struct AHFMBottomPlayerManager: AHFMModuleManager {
             let vcStr = "AHFMBottomPlayer.AHFMBottomPlayer"
             
             guard let vcType = NSClassFromString(vcStr) as? UIViewController.Type else {
+                assert(false, "Could find bottomPlayer, you need to include the dependency.")
                 completion?(false, nil)
                 return nil
             }
