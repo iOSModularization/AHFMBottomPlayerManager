@@ -14,6 +14,7 @@ import SwiftyJSON
 import AHFMDataTransformers
 import AHFMEpisodeListVCServices
 import AHFMAudioPlayerVCServices
+import AHFMEpisodeHistory
 
 class Manager: NSObject {
     static let shared = Manager()
@@ -36,7 +37,12 @@ class Manager: NSObject {
     }
     
     func bottomPlayer(_ vc: UIViewController, parentVC: UIViewController,didTapHistoryBtnForShow showId:Int){
-        print("didTapHistoryBtnForShow")
+        guard let navVC = self.navigationController else {
+            return
+        }
+        let type: AHServiceNavigationType = .push(navVC:navVC)
+        
+        AHServiceRouter.navigateVC(AHFMHistoryVCServices.service, taskName: AHFMHistoryVCServices.taskNavigation, userInfo: [:], type: type, completion: nil)
     }
     
     func bottomPlayer(_ vc: UIViewController, parentVC: UIViewController,didTapInsideWithForShow showId:Int, episodeID: Int){
