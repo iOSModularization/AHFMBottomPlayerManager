@@ -2,12 +2,13 @@ PODS:
   - AHDataModel (0.3.3)
   - AHFMAudioPlayerVCServices (0.1.0):
     - AHFMServices
-  - AHFMBottomPlayerManager (0.1.0):
+  - AHFMBottomPlayerManager (0.1.2):
     - AHFMAudioPlayerVCServices
     - AHFMBottomPlayerServices
     - AHFMDataCenter
     - AHFMDataTransformers
     - AHFMEpisodeListVCServices
+    - AHFMHistoryVCServices
     - AHFMModuleManager
     - AHFMNetworking
     - AHServiceRouter
@@ -19,6 +20,8 @@ PODS:
   - AHFMDataTransformers (0.1.0):
     - SwiftyJSON
   - AHFMEpisodeListVCServices (0.1.0):
+    - AHFMServices
+  - AHFMHistoryVCServices (0.1.0):
     - AHFMServices
   - AHFMModuleManager (0.2.0)
   - AHFMNetworking (0.1.2):
@@ -41,11 +44,12 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AHDataModel: 5f7ddd45e58bfcac15624952d629e121faef574f
   AHFMAudioPlayerVCServices: 27bdded45ce340f6bf0265264e64ee2fd26f6d57
-  AHFMBottomPlayerManager: 239cbdcb1ea2607b348572c97a7c476ec0a4764f
+  AHFMBottomPlayerManager: 76479dbe00b4ebd874a9f18302384975ede2c96b
   AHFMBottomPlayerServices: 62e83815ed8969376d047556382931cc46841de5
   AHFMDataCenter: efc8e4f8b926c6cb1b853ed754fb4547ed1cdb90
   AHFMDataTransformers: eafcb87a307fbd52ccd61917fa5de1aff6a7bd53
   AHFMEpisodeListVCServices: c3f1fa78faeeaa22151c213134ad6e603b0a9821
+  AHFMHistoryVCServices: 8d3a6de8ab3c5fd13305b2a914134e675d526541
   AHFMModuleManager: 301c8a5945a301528d5cba55e4809428ef896141
   AHFMNetworking: e2b524c569fc4ec0f2583ac607f355a22fe1a46f
   AHFMServices: 7c2c52fd7bd0b604fdab05cc9adb13129c218b60
