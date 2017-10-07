@@ -26,13 +26,13 @@ class Manager: NSObject {
     
     
     func bottomPlayer(_ vc: UIViewController, parentVC: UIViewController, didTapListBarForShow showId:Int){
-
+        
         var type: AHServiceNavigationType
         type = .present(currentVC: parentVC)
         
         
         AHServiceRouter.navigateVC(AHFMEpisodeListVCServices.service, taskName: AHFMEpisodeListVCServices.taskNavigation, userInfo: [AHFMEpisodeListVCServices.keyShowId : showId], type: type, completion: nil)
-    
+        
         vc.setValue(false, forKey: "shouldShowPlayer")
     }
     
@@ -93,7 +93,7 @@ class Manager: NSObject {
     /// Call loadLastPlayedEpisode(_:), pass both episode and its show within a dict parameter.
     /// parameter = ["episode": [String:Any], "show": [String:Any]]
     func bottomPlayerLoadLastPlayedEpisode(_ vc: UIViewController, parentVC: UIViewController){
-        let epHistoryArr = AHFMEpisodeHistory.queryAll().Limit(1).run()
+        let epHistoryArr = AHFMEpisodeHistory.queryAll().OrderBy("addedAt", isASC: false).Limit(1).run()
         if epHistoryArr.count > 0, let epHistory = epHistoryArr.first {
             let epId = epHistory.id
             if let ep = AHFMEpisode.query(byPrimaryKey: epId) {
